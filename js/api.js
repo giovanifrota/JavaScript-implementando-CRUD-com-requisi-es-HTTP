@@ -5,6 +5,7 @@ const api = {
       return response.json();
     } catch {
       alert("ERRO AO BUSCAR PENSAMENTOS! ");
+      throw error;
     }
   },
 };
