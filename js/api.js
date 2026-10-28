@@ -12,7 +12,7 @@ const api = {
   },
   async salvarPensamento(pensamento) {
     try {
-      const response = await axios.posy(`${URL_BASE}/pensamentos`, pensamento);
+      const response = await axios.post(`${URL_BASE}/pensamentos`, pensamento);
       return await response.data;
     } catch {
       alert("Erro ao salvar pensamentos");
@@ -45,10 +45,7 @@ const api = {
 
   async excluirPensamento(id) {
     try {
-      const response = await axios.delete(
-        `${URL_BASE}/pensamentos/${id}`,
-        pensamento,
-      );
+      const response = await axios.delete(`${URL_BASE}/pensamentos/${id}`);
       return await response.data;
     } catch {
       console.error("Erro ao excluir um pensamento", error);
